@@ -1,0 +1,14 @@
+button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.arttır {
+  background-color: green;
+}
+.azalt {
+  background-color: red;
+}

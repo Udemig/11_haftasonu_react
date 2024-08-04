@@ -1,0 +1,9 @@
+.card {
+  border: 3px dotted black;
+  width: 250px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.title {
+  font-weight: 300;
+}
