@@ -1,0 +1,135 @@
+{
+  "todos": [
+    {
+      "id": "1701",
+      "title": "UUID Kütüphanesini araştır",
+      "status": "job",
+      "date": "8/5/2024, 10:49:03 PM"
+    },
+    {
+      "id": "2baa",
+      "title": "React Öğren",
+      "status": "important",
+      "date": "8/5/2024, 10:49:19 PM"
+    },
+    {
+      "id": "61aa",
+      "title": "Etrafı temizle",
+      "status": "daily",
+      "date": "8/5/2024, 10:49:41 PM"
+    },
+    {
+      "id": "4f9c",
+      "title": "Doğru yer",
+      "status": "job",
+      "date": "8/5/2024, 11:09:44 PM"
+    },
+    {
+      "id": "bba2",
+      "title": "Doğru yer",
+      "status": "job",
+      "date": "8/5/2024, 11:24:29 PM"
+    },
+    {
+      "id": "748b",
+      "title": "Yeni Eleman",
+      "status": "important",
+      "date": "8/5/2024, 11:26:01 PM"
+    }
+  ],
+  "users": [
+    {
+      "id": "user1",
+      "name": "Furkan",
+      "email": "furkan@example.com",
+      "role": "admin",
+      "created_at": "2023-08-01T10:00:00Z"
+    },
+    {
+      "id": "user2",
+      "name": "Ayşe",
+      "email": "ayse@example.com",
+      "role": "editor",
+      "created_at": "2023-09-15T12:30:00Z"
+    },
+    {
+      "id": "user3",
+      "name": "Mehmet",
+      "email": "mehmet@example.com",
+      "role": "viewer",
+      "created_at": "2023-10-05T09:45:00Z"
+    }
+  ],
+  "activity": [
+    {
+      "id": "act2",
+      "user_id": "user2",
+      "action": "create_todo",
+      "timestamp": "2024-01-16T11:00:00Z"
+    },
+    {
+      "id": "act3",
+      "user_id": "user3",
+      "action": "update_todo",
+      "timestamp": "2024-01-17T14:20:00Z"
+    },
+    {
+      "id": "act4",
+      "user_id": "user4",
+      "action": "uygulamaya girdi",
+      "timestamp": "2024-03-19T14:20:00Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Akıllı Telefon",
+      "brand": "X Marka",
+      "price": 7500,
+      "stock": 25,
+      "category": "Elektronik",
+      "description": "Yüksek performanslı akıllı telefon.",
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "name": "Dizüstü Bilgisayar",
+      "brand": "Y Marka",
+      "price": 15000,
+      "stock": 10,
+      "category": "Elektronik",
+      "description": "Güçlü donanıma sahip dizüstü bilgisayar.",
+      "rating": 4.7
+    },
+    {
+      "id": 3,
+      "name": "Kablosuz Kulaklık",
+      "brand": "Z Marka",
+      "price": 1200,
+      "stock": 50,
+      "category": "Aksesuar",
+      "description": "Uzun pil ömrüne sahip kablosuz kulaklık.",
+      "rating": 4.3
+    },
+    {
+      "id": 4,
+      "name": "Akıllı Saat",
+      "brand": "X Marka",
+      "price": 2500,
+      "stock": 15,
+      "category": "Aksesuar",
+      "description": "Birçok özellikle donatılmış akıllı saat.",
+      "rating": 4.6
+    },
+    {
+      "id": 5,
+      "name": "Tablet",
+      "brand": "Y Marka",
+      "price": 9000,
+      "stock": 5,
+      "category": "Elektronik",
+      "description": "Geniş ekrana sahip yüksek çözünürlüklü tablet.",
+      "rating": 4.4
+    }
+  ]
+}
