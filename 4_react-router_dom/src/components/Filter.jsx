@@ -25,7 +25,11 @@ const Filter = () => {
   return (
     <div className="d-flex justify-content-between align-items-center my-4 gap-3">
       <div>
-        <select onChange={handleChange} className="form-select">
+        <select
+          defaultValue={searchParams.get("sırala")}
+          onChange={handleChange}
+          className="form-select"
+        >
           <option value="">sırala</option>
           <option>a-z</option>
           <option>z-a</option>
@@ -34,6 +38,7 @@ const Filter = () => {
 
       <form onSubmit={handleSubmit} className="d-flex gap-2">
         <input
+          defaultValue={searchParams.get("aramaTerimi")}
           className="form-control"
           type="text"
           placeholder="kitap ismi giriniz..."

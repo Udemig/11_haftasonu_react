@@ -64,36 +64,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-/* CSS */
-
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
-}
-
-.card {
-  max-width: 500px;
-  height: 100%;
-  margin: auto;
-}
-
-.active {
-  text-shadow: 0 0 15px #535bf2;
-  font-weight: bold;
-}
-
-.page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.image {
-  width: 100%;
-  max-width: 500px;
-}

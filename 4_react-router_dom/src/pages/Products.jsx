@@ -31,9 +31,9 @@ const Products = () => {
       <Filter />
 
       <div className="cards-container">
-        {books?.map((book) => (
-          <Card key={book.id} book={book} />
-        ))}
+        {books?.map((book) => {
+          return <Card key={book.id} book={book} />;
+        })}
       </div>
     </div>
   );
