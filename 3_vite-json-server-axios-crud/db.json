@@ -19,22 +19,16 @@
       "date": "8/5/2024, 10:49:41 PM"
     },
     {
-      "id": "4f9c",
-      "title": "Doğru yer",
-      "status": "job",
-      "date": "8/5/2024, 11:09:44 PM"
-    },
-    {
-      "id": "bba2",
-      "title": "Doğru yer",
-      "status": "job",
-      "date": "8/5/2024, 11:24:29 PM"
-    },
-    {
       "id": "748b",
-      "title": "Yeni Eleman",
-      "status": "important",
+      "title": "En Yeni Eleman",
+      "status": "daily",
       "date": "8/5/2024, 11:26:01 PM"
+    },
+    {
+      "id": "3e76",
+      "title": "selam",
+      "status": "daily",
+      "date": "8/10/2024, 9:37:29 PM"
     }
   ],
   "users": [
@@ -82,7 +76,7 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Akıllı Telefon",
       "brand": "X Marka",
       "price": 7500,
@@ -92,7 +86,7 @@
       "rating": 4.5
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Dizüstü Bilgisayar",
       "brand": "Y Marka",
       "price": 15000,
@@ -102,7 +96,7 @@
       "rating": 4.7
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Kablosuz Kulaklık",
       "brand": "Z Marka",
       "price": 1200,
@@ -112,7 +106,7 @@
       "rating": 4.3
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Akıllı Saat",
       "brand": "X Marka",
       "price": 2500,
@@ -122,7 +116,7 @@
       "rating": 4.6
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Tablet",
       "brand": "Y Marka",
       "price": 9000,

@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import api from "../utils/api";
 
 const Form = ({ setTodos }) => {
@@ -11,7 +12,7 @@ const Form = ({ setTodos }) => {
 
     // input boşsa uyarı ver fonksiyonu durdur
     if (!text.trim()) {
-      return alert("Lütfen içeriği belirleyin");
+      return toast.warn("Lütfen içeriği belirleyin");
     }
 
     // API'a gönderilecek nesneyi hazırla
@@ -25,9 +26,13 @@ const Form = ({ setTodos }) => {
     api
       .post("/todos", newTodo)
       // oluşturulan nesneyi state'e kaydet (arayüze eklenir)
-      .then((res) => setTodos((todos) => [res.data, ...todos]))
+      .then((res) => {
+        setTodos((todos) => [res.data, ...todos]);
+
+        toast.success("Todo oluşturuldu");
+      })
       // istek başarısız olursa uyarı gönder
-      .catch((err) => alert("Bir sorun oluştu!!"));
+      .catch((err) => toast.error("Bir sorun oluştu!!"));
 
     // formu sıfırla
     e.target.reset();

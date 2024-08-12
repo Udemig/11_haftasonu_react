@@ -4,6 +4,7 @@ import { FaCalendarDays } from "react-icons/fa6";
 import api from "../utils/api";
 import { useState } from "react";
 import Modal from "./Modal";
+import { toast } from "react-toastify";
 
 const ListItem = ({ todo, setTodos }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,9 +25,12 @@ const ListItem = ({ todo, setTodos }) => {
     api
       .delete(`/todos/${todo.id}`)
       // başarılı olursa > silinen todo'yu state den kaldır
-      .then(() =>
-        setTodos((todos) => todos.filter((item) => item.id !== todo.id))
-      );
+      .then(() => {
+        // state'i güncelle
+        setTodos((todos) => todos.filter((item) => item.id !== todo.id));
+        // bildirim gönder
+        toast.info("Todo kaldırıldı");
+      });
   };
 
   return (
@@ -47,7 +51,13 @@ const ListItem = ({ todo, setTodos }) => {
         </button>
       </div>
 
-      {isOpen && <Modal close={() => setIsOpen(false)} />}
+      {isOpen && (
+        <Modal
+          todo={todo}
+          setTodos={setTodos}
+          close={() => setIsOpen(false)}
+        />
+      )}
     </li>
   );
 };

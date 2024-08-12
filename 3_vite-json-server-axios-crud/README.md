@@ -112,3 +112,27 @@ api.delete(`/todos/${todo.id}`);
 ## Not
 
 - Eğerki api'da yaptığımız güncellemenin ekranada yanasımasını istiyorsak yani api'a göncerilen todo'nun arayüze eklenemsini istiyorsak isteğin başarılı oma durumunu .then() aracılığı ile izlemelei ve istek başırılı olduğu zaman arayüz güncellenemsi için state'ide güncellemeleyiz
+
+## DİZİ GÜNCELLEME
+
+// İLK HALİ
+const dizi = [
+{ id: 1, name: "Mahmut" },
+{ id: 2, name: "Ali" },
+{ id: 3, name: "Ayşe" },
+];
+
+// güncel değer
+const güncelKisi = { id: 2, name: "Ayla" };
+
+// diziyi güncelle id'si 2 olan elemanın ismini Ayla yap
+const yeniDizi = dizi.map((kisi) =>
+kisi.id == güncelKisi.id ? güncelKisi : kisi
+);
+
+// SON HALİ
+[
+{ id: 1, name: "Mahmut" },
+{ id: 2, name: "Ayla" },
+{ id: 3, name: "Ayşe" },
+];

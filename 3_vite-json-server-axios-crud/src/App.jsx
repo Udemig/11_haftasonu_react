@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "./utils/api";
 import ListItem from "./components/ListItem";
 import Form from "./components/Form";
+import { toast } from "react-toastify";
 
 const App = () => {
   const [todos, setTodos] = useState(null);
@@ -12,7 +13,7 @@ const App = () => {
     api
       .get("/todos", { params })
       .then((res) => setTodos(res.data.data))
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("Veriler yüklenmedi!!"));
   }, []);
 
   return (
