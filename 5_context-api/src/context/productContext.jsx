@@ -2,12 +2,13 @@
  * Context API
  * Uygulamadaki birden çok bileşenin ihtiyacı olan verileri bileşenlerden bağımsız bir şekilde konumlanan merkezlerde yönetmeye yarar
  
- * Context yapısı içerisnde verilerin state'ini ve verileri değiştirmeyey yarayan fonksiyonları tutulabilir
+ * Context yapısı içerisnde verilerin state'ini ve verileri değiştirmeye yarayan fonksiyonları tutulabilir.
 
  * Context, tuttuğumuz değişkenleri bileşenlere doğrudan aktarım yapabilen merkezi state yönetim aracıdır
  */
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import axios from "axios";
 
 //! Context yapısının temelini oluşturma
 export const ProductContext = createContext();
@@ -15,14 +16,24 @@ export const ProductContext = createContext();
 //! Bir sağlayıcı bileşeni tanımla - HOC
 export const ProductProvider = ({ children }) => {
   // context yapısı içerisinde tutulan state
-  const [products, setProducts] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
-  // state'i güncellemeye yarayan methodlar
-  const createProduct = () => {};
+  // api'dan verileri al state'e aktar
+  useEffect(() => {
+    setIsLoading(true);
+
+    axios
+      .get("https://dummyjson.com/products")
+      .then((res) => setData(res.data))
+      .catch((err) => setError(err.message))
+      .finally(() => setIsLoading(false));
+  }, []);
 
   // context yapısında tuttuğumuz state/method'ları uygulamaya sağla
   return (
-    <ProductContext.Provider value={{ products, createProduct }}>
+    <ProductContext.Provider value={{ data, isLoading, error }}>
       {children}
     </ProductContext.Provider>
   );
