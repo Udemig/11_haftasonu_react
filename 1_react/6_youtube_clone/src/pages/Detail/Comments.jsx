@@ -18,8 +18,6 @@ const Comments = ({ videoId }) => {
       .finally(() => setIsLoading(false));
   }, [videoId]);
 
-  console.log(comments);
-
   return (
     <div className="my-6">
       {isLoading ? (
@@ -36,9 +34,9 @@ const Comments = ({ videoId }) => {
           />
 
           {comments.data.map((i) => (
-            <div className="flex gap-3 items-start px-1 py-4">
+            <div className="flex gap-2 sm:gap-3 items-start px-1 py-3 sm:py-4">
               <img
-                className="rounded-full w-10 h-10"
+                className="rounded-full size-8 sm:size-10"
                 src={i.authorThumbnail[0].url}
               />
               <div className="flex flex-col gap-2">

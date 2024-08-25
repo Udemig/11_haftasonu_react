@@ -33,6 +33,8 @@ const Detail = () => {
         {/* video */}
         <div className="h-[50vh] lg:h-[60vh] rounded overflow-hidden">
           <ReactPlayer
+            muted={true}
+            playing={true}
             height={"100%"}
             width={"100%"}
             url={`https://www.youtube.com/watch?v=${id}`}

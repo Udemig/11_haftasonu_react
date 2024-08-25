@@ -4,9 +4,10 @@ import { useState } from "react";
 const Description = ({ video }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const text = isOpen
-    ? video.description
-    : video.description.slice(0, 150) + "...daha fazla";
+  const text =
+    isOpen || !video.description
+      ? video.description
+      : video.description.slice(0, 150) + "...daha fazla";
 
   return (
     <div
