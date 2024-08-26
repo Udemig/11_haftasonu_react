@@ -15,6 +15,7 @@ const userReducer = (state = initialState, action) => {
     case "LOGOUT":
       return state;
 
+    // burda tanımlı olmayan bir aksiyon tetiklenirse user state'inin sabir olarak kalmasını sağlar
     default:
       return state;
   }

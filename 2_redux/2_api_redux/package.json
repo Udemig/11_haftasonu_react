@@ -1,5 +1,5 @@
 {
-  "name": "1_temeller",
+  "name": "2_api_redux",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,13 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
+    "axios": "^1.7.5",
+    "json-server": "^1.0.0-beta.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.2",
-    "react-toastify": "^10.0.5",
-    "redux": "^5.0.1",
-    "uuid": "^10.0.0"
+    "react-router-dom": "^6.26.1",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
