@@ -1,8 +1,29 @@
-# React + Vite
+# Middleware Nedir ?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- MW, yazılım geliştirmede, iki olay arasıda çalışan koddur.
+- Örneğin bir api istğeinin bir uçtan diğer uca iletilirken araya girip bu isteği işleyen bir mw yazılabilir.
 
-Currently, two official plugins are available:
+# Thunk Mw Nedir ?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Redux thunk , redux'ta kullanılan bir middleware'dir.
+
+- Redux thunk, normalde sadece obje dönen aksiyonlar yerine fonksiyon dönen aksiyonlar yazmamıza olanak sağlar.
+
+- Redux thunk akiyonların içierisnde döndürdüğümüz bu fonksiyonları çalıştırır bu fonksiyonlar içirisinde asenkrın işlemler yapılabilir ve işlemler sırasında dispatch kullanıalbilir
+
+```js
+// Klasik yöntem
+useEffect(() => {
+  dispatch(setLoading());
+
+  api
+    .get("/restaurants")
+    .then((res) => dispatch(setRestaurants(res.data)))
+    .catch((err) => dispatch(setError(err)));
+}, []);
+
+// Thunk ile
+useEffect(() => {
+  dispatch(getRestaurants());
+}, []);
+```

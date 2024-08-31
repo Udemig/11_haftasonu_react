@@ -1,17 +1,26 @@
+import ActionTypes from "../actionTypes";
+
 const initialState = {
   restaurants: [],
+  isLoading: true,
+  error: null,
 };
 
 const restaurantReducer = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
-    case "X":
-      return state;
+    case ActionTypes.REST_LOADING:
+      return { ...state, isLoading: true };
 
-    case "Y":
-      return state;
+    case ActionTypes.REST_ERROR:
+      return { ...state, isLoading: false, error: action.payload.message };
 
-    case "Z":
-      return state;
+    case ActionTypes.REST_SUCCESS:
+      return {
+        isLoading: false,
+        error: null,
+        restaurants: action.payload,
+      };
 
     default:
       return state;
