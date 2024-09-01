@@ -7,14 +7,16 @@ const Error = ({ msg, retry }) => {
         <p className="font-semibold">{msg}</p>
       </div>
 
-      <div className="flex justify-center my-10">
-        <button
-          onClick={retry}
-          className="border p-2 px-4 rounded-md hover:bg-zinc-100 transition"
-        >
-          Tekrar Dene
-        </button>
-      </div>
+      {retry && (
+        <div className="flex justify-center my-10">
+          <button
+            onClick={retry}
+            className="border p-2 px-4 rounded-md hover:bg-zinc-100 transition"
+          >
+            Tekrar Dene
+          </button>
+        </div>
+      )}
     </div>
   );
 };

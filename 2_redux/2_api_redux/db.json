@@ -144,18 +144,7 @@
       "distance": 6
     }
   ],
-
   "products": [
-    {
-      "id": "1",
-      "title": "Izgara Somon",
-      "desc": "Taze somon balığı ızgara edilmiş.",
-      "category": "Deniz Ürünleri",
-      "price": 378.99,
-      "photo": "rastgele.com",
-      "restaurantId": "1",
-      "isPopular": true
-    },
     {
       "id": "1",
       "title": "Izgara Somon",
@@ -455,15 +444,30 @@
       "isPopular": false
     }
   ],
-
   "cart": [
     {
-      "id": "1",
+      "id": "5c971fd6-de46-4ff1-a045-3ab97f9a9881",
+      "productId": "29",
+      "title": "İtalyan Salata",
+      "price": 8.49,
+      "photo": "https://picsum.photos/210",
+      "amount": 1
+    },
+    {
+      "id": "60736dfd-e746-4641-ab4b-7cf239ee2fb5",
+      "productId": "3",
+      "title": "Tavuk Kebabı",
+      "price": 17.99,
+      "photo": "https://picsum.photos/203",
+      "amount": 1
+    },
+    {
+      "id": "5ac9d034-da9c-4b56-a913-f778fffe1b74",
+      "productId": "1",
       "title": "Izgara Somon",
-      "price": 378.99,
-      "photo": "rastgele.com",
-      "restaurantName": "Lezzetin Tadı",
-      "amount": 3
+      "price": 45.99,
+      "photo": "https://picsum.photos/200",
+      "amount": 2
     }
   ]
 }
