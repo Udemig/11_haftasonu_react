@@ -35,6 +35,13 @@ const SearchResults = () => {
       .finally(() => setIsLoading(false));
   }, [query, page]);
 
+  // eğer yeni bir şey aratılırsa önceki datayı sil
+  useEffect(() => {
+    setData([]);
+    setToken(null);
+    setPage(1);
+  }, [query]);
+
   return (
     <div className="p-4 sm:p-6 md:p-10 h-[90vh] overflow-y-auto">
       <h2 className="text-xl mb-5">

@@ -27,7 +27,7 @@ const Card = ({ video, isRow }) => {
       <div className="flex gap-4 mt-5">
         <img
           className={`w-14 h-14 rounded-full`}
-          src={video.channelThumbnail[0].url}
+          src={video.channelThumbnail && video.channelThumbnail[0].url}
         />
 
         <div>
