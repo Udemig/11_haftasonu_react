@@ -1,9 +1,9 @@
 import { Button, Form, Modal } from "react-bootstrap";
 import { inputs } from "../constants";
-import { addTask } from "../redux/slices/crudSlice";
+import { addTask, editTask } from "../redux/slices/crudSlice";
 import { useDispatch } from "react-redux";
 
-const FormModal = ({ isOpen, close }) => {
+const FormModal = ({ task, isOpen, close }) => {
   const dispatch = useDispatch();
 
   // form gönderilince
@@ -16,8 +16,13 @@ const FormModal = ({ isOpen, close }) => {
     // inputlardaki verileri bir nesne haline getir
     const taskData = Object.fromEntries(formData.entries());
 
-    // reducer'a yeni görev ekleme haberi ver
-    dispatch(addTask(taskData));
+    if (!task) {
+      // reducer'a yeni görev ekleme haberi ver
+      dispatch(addTask(taskData));
+    } else {
+      // reducer'a güncelleneme haberi ver
+      dispatch(editTask({ id: task.id, ...taskData }));
+    }
 
     // formu kapat
     close();
@@ -26,7 +31,9 @@ const FormModal = ({ isOpen, close }) => {
   return (
     <Modal show={isOpen} centered className="text-black" onHide={close}>
       <Modal.Header closeButton>
-        <Modal.Title>Yeni Görev Ekle</Modal.Title>
+        <Modal.Title>
+          {task ? "Görevi Düzenle" : "Yeni Görev Ekle"}
+        </Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
@@ -38,6 +45,7 @@ const FormModal = ({ isOpen, close }) => {
                 name={prop.name}
                 placeholder={prop.holder}
                 type={prop.type}
+                defaultValue={task && task[prop.name]}
                 required
               />
             </Form.Group>
@@ -47,7 +55,7 @@ const FormModal = ({ isOpen, close }) => {
             <Button onClick={close} variant="secondary">
               İptal
             </Button>
-            <Button type="submit">Oluştur</Button>
+            <Button type="submit">{task ? "Güncelle" : "Oluştur"}</Button>
           </Modal.Footer>
         </Form>
       </Modal.Body>
