@@ -10,6 +10,8 @@ const App = () => {
     initialValues: {
       email: "",
       age: "",
+      password: "",
+      passwordConfirm: "",
     },
 
     // formiğin hata yönetimi yapması için kuralları söyle
