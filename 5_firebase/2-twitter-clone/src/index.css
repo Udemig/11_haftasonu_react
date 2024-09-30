@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html elementlerinin varsayılan stillerini belirliyoruz */
+/* @apply tailwind class'larını kullanmamızı sağlar */
+@layer base {
+  input {
+    @apply text-black rounded mt-1 p-2 outline-none shadow-lg focus:shadow-[gray];
+  }
+
+  button {
+    @apply rounded-md py-1 px-3;
+  }
+}
+
+/* anasayfanın grid düzeni */
+
+.feed {
+  display: grid;
+  grid-template-columns: 1fr minmax(400px, 600px) 1fr;
+}
