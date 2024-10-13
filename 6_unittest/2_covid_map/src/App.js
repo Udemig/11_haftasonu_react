@@ -6,12 +6,14 @@ import Header from "./components/header";
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
+      <div className="flex flex-col min-h-screen">
+        <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/detail" element={<Detail />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/detail/:code" element={<Detail />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };

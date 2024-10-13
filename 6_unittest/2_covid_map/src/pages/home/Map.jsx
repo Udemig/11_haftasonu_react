@@ -5,8 +5,11 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 import Container from "../../components/container";
+import { useNavigate } from "react-router-dom";
 
 const Map = () => {
+  const navigate = useNavigate();
+
   const geoUrl = "https://ismailarilik.com/react-covid-maps/geo.json";
 
   return (
@@ -21,7 +24,7 @@ const Map = () => {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    onClick={() => console.log(geo)}
+                    onClick={() => navigate(`/detail/${geo.id}`)}
                     style={{
                       default: {
                         fill: "white",
