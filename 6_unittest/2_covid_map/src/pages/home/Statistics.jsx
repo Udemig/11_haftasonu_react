@@ -8,12 +8,13 @@ import HomeLoader from "../../components/loaders/HomeLoader";
 const Statistics = () => {
   const [isLoading, setLoading] = useState(true);
   const [totals, setTotals] = useState(null);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     api
       .get("/totals")
       .then((res) => setTotals(res.data[0]))
-      .catch((err) => console.log(err))
+      .catch(() => setIsError(true))
       .finally(() => setLoading(false));
   }, []);
 
@@ -22,6 +23,10 @@ const Statistics = () => {
       <div className="bg-white shadow-lg rounded-xl p-5 grid grid-cols-3 gap-5 mt-[-34px] md:mt-[-48px]">
         {isLoading ? (
           <HomeLoader />
+        ) : isError ? (
+          <p className="text-center col-span-3">
+            İstatistikler alınamıyor...
+          </p>
         ) : (
           <>
             <Item

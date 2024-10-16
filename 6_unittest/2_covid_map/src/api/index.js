@@ -1,7 +1,5 @@
 import axios from "axios";
 
-console.log();
-
 const api = axios.create({
   baseURL: "https://covid-19-data.p.rapidapi.com",
   params: { format: "json" },
