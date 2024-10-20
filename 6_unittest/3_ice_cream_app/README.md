@@ -7,3 +7,5 @@
 - react-router-dom
 - react-toastify
 - tailwind
+- json-server
+- axios
