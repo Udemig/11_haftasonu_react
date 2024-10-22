@@ -4,6 +4,7 @@ import TrendsButton from './TrendsButton';
 import Loader from '../loader';
 import Error from '../error';
 import Card from '../card';
+import Cart from '../cart';
 
 const List = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,13 +16,16 @@ const List = () => {
 
     api
       .get('/iceCreams')
-      .then((res) => setData(res.data))
+      .then((res) => {
+        setData(res.data);
+      })
       .catch((err) => setError(err.message))
       .finally(() => setIsLoading(false));
   }, []);
 
   return (
     <div className="mt-[30px] lg:mt-[120px]">
+      <Cart />
       <TrendsButton />
 
       {isLoading ? (

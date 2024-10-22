@@ -1,6 +1,6 @@
 const Selector = ({ selectedType, setSelectedType }) => {
   return (
-    <div className="flex mt-3 gap-5 ">
+    <div className="flex mt-3 gap-5">
       <button
         className={`flex-1 border rounded-md py-2 px-4 text-center hover:bg-white/30 cursor-pointer transition ${
           selectedType === 'cornet' && 'bg-white text-black shadow-lg'
