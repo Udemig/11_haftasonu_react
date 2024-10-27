@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
-import { IoClose } from 'react-icons/io5';
-import CartItem from './CartItem';
-import CartInfo from './CartInfo';
+import { useSelector } from "react-redux";
+import { IoClose } from "react-icons/io5";
+import CartItem from "./CartItem";
+import CartInfo from "./CartInfo";
 
 const Modal = ({ isOpen, close }) => {
   const { cart } = useSelector((store) => store);
@@ -17,6 +17,7 @@ const Modal = ({ isOpen, close }) => {
             <h1 className="font-semibold">SİPARİŞ</h1>
 
             <button
+              data-testid="close"
               className="border p-2 rounded-md hover:bg-gray-300/50"
               onClick={close}
             >
