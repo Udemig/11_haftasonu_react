@@ -26,6 +26,7 @@ const List = () => {
   return (
     <div className="mt-[30px] lg:mt-[120px]">
       <Cart />
+
       <TrendsButton />
 
       {isLoading ? (

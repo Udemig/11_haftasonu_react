@@ -36,3 +36,12 @@ export const mockArray = [
     id: '853b',
   },
 ];
+
+export const mockItem = {
+  name: 'Çikolata Fırtınası',
+  image: '/ice-2.png',
+  price: 20,
+  id: 'd21b',
+  selectedType: 'cornet',
+  quantity: 2,
+};

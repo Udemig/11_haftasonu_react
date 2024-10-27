@@ -3,12 +3,14 @@ import List from '../components/list';
 import api from '../api';
 import { mockArray } from '../constants';
 import Card from '../components/card';
+import Cart from '../components/cart';
 
 // api modülünü mock'la
 jest.mock('../api');
 
 // car bielşeni kendi içinde providfe / browser router gibi bağımlılıkları kullandığından ve bu bağımlılkarın list bileşenin testine etki etmesini istemediğimizden card bileşenini mock'la
 jest.mock('../components/card');
+jest.mock('../components/cart');
 
 describe('List bileşeni testleri', () => {
   beforeEach(() => {

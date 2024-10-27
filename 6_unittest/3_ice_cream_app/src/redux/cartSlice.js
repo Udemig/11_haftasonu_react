@@ -24,9 +24,30 @@ const cartSlice = createSlice({
         });
       }
     },
+
+    createOrder: (state) => {
+      state.cart = [];
+    },
+
+    deleteFromCart: (state, { payload }) => {
+      // aynı id ve aynı tipteki elemanı sepette bul
+      // ürünün sırasını bul
+      const index = state.cart.findIndex(
+        (item) =>
+          item.id === payload.id && item.selectedType === payload.selectedType
+      );
+
+      if (state.cart[index].quantity > 1) {
+        // miktarı 1'den fazlaysa miktarını azalt
+        state.cart[index].quantity--;
+      } else {
+        // miktarı 1 ise ürünü sil
+        state.cart.splice(index, 1);
+      }
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, createOrder, deleteFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
