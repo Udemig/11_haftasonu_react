@@ -91,3 +91,23 @@ const mer = new Araba("Mercedes", "cla45s", "benzin");
 
 mer.calistir();
 mer.x();
+
+// Bir class aynı anda birden fazla farklı class'i miras alamaz
+// Ama miras alma olayı birden fazla kez geçekleşebilir
+
+class Human {
+  eye_color: string = " ";
+}
+
+class Father extends Human {
+  eye_color = "Kahverengi";
+}
+
+class Mother extends Human {
+  eye_color = "Mavi";
+}
+
+class Son extends Father {}
+
+const ogul = new Son();
+console.log(ogul.eye_color);

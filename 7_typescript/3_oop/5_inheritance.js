@@ -86,6 +86,7 @@ var Araba = /** @class */ (function (_super) {
     Araba.prototype.calistir = function () {
         // calistir methodunun parent class versiyonunuu çağır
         _super.prototype.calistir.call(this);
+        // ardından farklı işlemler yaparız
         console.log("Kontak Çevriliyor...");
     };
     return Araba;
@@ -93,3 +94,38 @@ var Araba = /** @class */ (function (_super) {
 var mer = new Araba("Mercedes", "cla45s", "benzin");
 mer.calistir();
 mer.x();
+// Bir class aynı anda birden fazla farklı class'i miras alamaz
+// Ama miras alma olayı birden fazla kez geçekleşebilir
+var Human = /** @class */ (function () {
+    function Human() {
+        this.eye_color = " ";
+    }
+    return Human;
+}());
+var Father = /** @class */ (function (_super) {
+    __extends(Father, _super);
+    function Father() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.eye_color = "Kahverengi";
+        return _this;
+    }
+    return Father;
+}(Human));
+var Mother = /** @class */ (function (_super) {
+    __extends(Mother, _super);
+    function Mother() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.eye_color = "Mavi";
+        return _this;
+    }
+    return Mother;
+}(Human));
+var Son = /** @class */ (function (_super) {
+    __extends(Son, _super);
+    function Son() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Son;
+}(Father));
+var ogul = new Son();
+console.log(ogul.eye_color);
