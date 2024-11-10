@@ -4,7 +4,7 @@ import YearFilter from "./YearFilter";
 
 const Filter = () => {
   return (
-    <div className="mt-12 padding-x padding-y max-width">
+    <div id="filter" className="mt-12 padding-x padding-y max-width">
       <div className="home__text-container">
         <h1 className="text-4xl font-extrabold">Araba Kataloğu</h1>
         <p>Beğenebileceğin arabaları keşfet</p>

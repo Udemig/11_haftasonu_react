@@ -4,6 +4,7 @@ import Button from "../button/index";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Modal from "../modal";
+import generateImage from "../../utils/generateImage";
 
 type Props = {
   car: CarType;
@@ -38,15 +39,13 @@ const Card = ({ car }: Props) => {
       {/* araba fiyatı */}
       <div className="flex mt-6 text-[19px]">
         <span className="font-semibold">₺</span>
-        <span className="text-[32px]">
-          {Math.round(Math.random() * 7000) + 1500}
-        </span>
+        <span className="text-[32px]">{Math.round(Math.random() * 7000) + 1500}</span>
         <span className="font-semibold self-end">/gün</span>
       </div>
 
       {/* resim alanı */}
       <div className="w-full">
-        <img src="/hero.png" className="w-full h-full object-contain" />
+        <img src={generateImage(car)} className="w-full h-full object-contain" />
       </div>
 
       {/* alt kısım */}
