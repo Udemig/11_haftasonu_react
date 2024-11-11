@@ -26,35 +26,50 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="searchbar gap-3">
+    <form
+      onSubmit={handleSubmit}
+      className="searchbar gap-3 flex items-center justify-center"
+    >
       <div className="searchbar__item">
-        <ReactSelect
-          onChange={(e) => setMake(e!.value)}
-          options={options}
-          defaultValue={selected}
-          className="w-full text-black"
-          placeholder="Marka Seçiniz..."
-        />
+        <div className="w-full flex flex-col">
+          <label htmlFor="make">Marka</label>
+          <ReactSelect
+            inputId="make"
+            onChange={(e) => setMake(e!.value)}
+            options={options}
+            defaultValue={selected}
+            className="w-full text-black"
+            placeholder="Marka Seçiniz..."
+          />
+        </div>
 
-        <button className="ml-3 sm:hidden">
-          <img src="/search.svg" className="size-[40px]" />
+        <button aria-label="search" className="ml-3 sm:hidden">
+          <img alt="magnifying glass" src="/search.svg" className="size-[40px]" />
         </button>
       </div>
 
-      <div className="searchbar__item">
-        <img className="absolute ml-3" src="/model-icon.png" width={25} />
+      <div className="searchbar__item flex flex-col !items-start ">
+        <label htmlFor="model">Model</label>
 
-        <input
-          type="text"
-          className="searchbar__input rounded text-black"
-          placeholder="Örn: Civic"
-          onChange={(e) => setModel(e.target.value)}
-          defaultValue={params.get("model") || ""}
-        />
+        <div className="flex w-full">
+          <p className="absolute ml-3 mt-1">
+            <img alt="car from front" src="/model-icon.png" width={25} />
+          </p>
 
-        <button className="ml-3">
-          <img src="/search.svg" className="size-[40px]" />
-        </button>
+          <input
+            title="search for spesific model"
+            id="model"
+            type="text"
+            className="searchbar__input rounded text-black"
+            placeholder="Örn: Civic"
+            onChange={(e) => setModel(e.target.value)}
+            defaultValue={params.get("model") || ""}
+          />
+
+          <button aria-label="search" className="ml-3">
+            <img alt="magnifying glass" src="/search.svg" className="size-[40px]" />
+          </button>
+        </div>
       </div>
     </form>
   );

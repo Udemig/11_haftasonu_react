@@ -21,10 +21,11 @@ const Modal = ({ car, isOpen, close }: Props) => {
             className="bg-white relative p-6 max-w-lg max-h-[90vh] rounded-2xl flex flex-col gap-5 shadow-xl overflow-auto"
           >
             <button
+              aria-label="close modal"
               onClick={close}
               className="cursor-pointer p-1 absolute end-1 top-1 z-10 bg-white rounded-full"
             >
-              <img src="/close.svg" />
+              <img alt="X" src="/close.svg" />
             </button>
 
             {/* fotoğraflar */}
@@ -33,9 +34,7 @@ const Modal = ({ car, isOpen, close }: Props) => {
             {/* bilgiler */}
             {Object.entries(car).map(([key, value]) => (
               <p className="flex justify-between">
-                <span className="capitalize">
-                  {key.split("_").join(" ")}
-                </span>
+                <span className="capitalize">{key.split("_").join(" ")}</span>
                 <span className="font-semibold capitalize">{value}</span>
               </p>
             ))}

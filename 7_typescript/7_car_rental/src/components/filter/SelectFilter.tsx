@@ -12,8 +12,13 @@ const SelectFilter = () => {
     : fuels.find((i) => i.value === fuel);
 
   return (
-    <div>
+    <div className="flex justify-center bg-gray-700 rounded-[4px] items-center">
+      <label className="mx-2" htmlFor="fuel">
+        Yakıt:
+      </label>
+
       <ReactSelect
+        inputId="fuel"
         options={fuels}
         className="text-black min-w-[130px]"
         defaultValue={selected}

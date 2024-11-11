@@ -14,7 +14,7 @@ const Field = ({ img, text }: { img: string; text: string }) => {
       }}
       className="flex-center flex-col"
     >
-      <img src={img} width={25} />
+      <img alt="icon" src={img} width={25} />
       <p>{text}</p>
     </motion.div>
   );

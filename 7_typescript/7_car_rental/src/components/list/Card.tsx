@@ -45,7 +45,11 @@ const Card = ({ car }: Props) => {
 
       {/* resim alanı */}
       <div className="w-full">
-        <img src={generateImage(car)} className="w-full h-full object-contain" />
+        <img
+          alt={car.make + car.model}
+          src={generateImage(car)}
+          className="w-full h-full object-contain"
+        />
       </div>
 
       {/* alt kısım */}
