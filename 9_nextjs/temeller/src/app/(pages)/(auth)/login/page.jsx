@@ -8,7 +8,7 @@ export const metadata = {
 const Login = async () => {
   await delay(2000);
 
-  throw new Error("giriş yapılamadı...");
+  // throw new Error("giriş yapılamadı...");
 
   return <div>Login</div>;
 };

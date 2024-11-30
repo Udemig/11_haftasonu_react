@@ -11,7 +11,7 @@ const Error = ({ error, reset }) => {
 
       <p>{error.message}</p>
 
-      <button onClick={reset}>Tekrar Dene</button>
+      <button onClick={reset}>Tekrar Dene.</button>
     </div>
   );
 };
