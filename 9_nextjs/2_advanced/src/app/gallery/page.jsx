@@ -1,8 +1,20 @@
 import Image from "next/image";
 import { data } from "../constants";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-const Gallery = () => {
+const Gallery = async () => {
+  let user = {
+    name: "furkan",
+    role: "admin",
+  };
+
+  // admin olmayan kullanıcıları anasayfaya yönlendirelim
+  // server component olduğunda dolayı redirect kullandık
+  if (user.role !== "admin") {
+    redirect("/");
+  }
+
   return (
     <div className="container mx-auto p-5">
       <h1 className="text-center text-3xl font-bold my-10">

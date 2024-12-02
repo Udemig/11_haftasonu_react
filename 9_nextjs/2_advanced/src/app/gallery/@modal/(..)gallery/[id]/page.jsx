@@ -2,13 +2,14 @@
 
 import { data } from "@/app/constants";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
-const DetailPreview = ({ params }) => {
-  const { id } = params;
+const DetailPreview = () => {
+  // client componentlarda parametrelere erişme yöntemi
+  const { id } = useParams();
   const item = data.find((i) => i.id === id);
 
-  // nextjs'de fonksiyon içi yönlendirme amacıyla kullanırız
+  // client componentlarda fonksiyon içi yönlendirme amacıyla kullanırız
   const router = useRouter();
 
   const close = () => {
@@ -28,6 +29,10 @@ const DetailPreview = ({ params }) => {
   const refresh = () => {
     window.location.reload();
   };
+
+  // sadece client componnetlarda urldeki yolu alma amcıyla kullanılır
+  const path = usePathname();
+  console.log(path);
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur grid place-items-center p-5">

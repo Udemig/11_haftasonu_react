@@ -49,3 +49,40 @@
 - Cache özelliği sayesinde api'dan gelen veriyi birden çok component'da kullanıcaksak redux vb. yapılara gerek duymadan bütün componentlarda api isteğini atarız bunlardan sadece biri gerçekten api'a gidereken diğer componentlar ilk giden istekten gelen önbelleğe alınan cevabı kullanılır
 
 - Varsayılan olarak bütün api isteklerinden gelen cevaplar cache'de tutulur. Ama çektiğimiz veriye göre bunu değiştirmek isteyebilirirz. Örn: Bir sosyal medya uygulmasının anasayfasında bu cache özelliğini kullanırsak her sayfaya yenilendiğinde aynı içeriği görürüz. Bundan dolayı api isteğini atarken veri cache tutulmalı mı kararını verebiliyoruz.
+
+# Font
+
+- Nextjs, içerisinde fontlar ile alakalı bazı optimizasyonlara sahiptir. Projede kullanılmayan font varyantlarını (kalınlık / italik) oto. olarak algılar ve import etmez
+
+- Font'ları daha seo dostu hale getirir.
+
+- Yerel fontları yönetmek daha kolaydır.
+
+# Nextjs Fonksiyonları
+
+## useRouter
+
+- Client component'larda fonksiyon içerersinde yönlendirme yapmayaya yarar.
+
+- back() | forward() | refresh() | push() methodlarına sahiptir
+
+## redirect
+
+- server component'larda yönlendirme yapmak için kullanılır.
+- kullanıcının yetkisine bağlı olarak girmemesi / erişmemesi gereken bir sayfa varsa, o sayfadan dışarıya yönlendirme yapmak için kullanılur
+
+## notFound
+
+- sadece server componentlarda kullanılabilir.
+- 404 sayfasına yönlendirir
+
+## usePathname
+
+- sadece client componentlarda kullanılabilir.
+
+- kullanıcnın bulunduğu yolu alır
+
+## useSearchParams
+
+- sadece client componentlarda kullanılabilir.
+- urldeki arama parametrelerini almak için kullanılır

@@ -1,6 +1,7 @@
 import { data } from "@/app/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 const Page = async ({ params }) => {
   // urldeki id parametresine eriş
@@ -8,6 +9,9 @@ const Page = async ({ params }) => {
 
   //urldeki parametreye karşılık gelen dizi elemanını al
   const item = data.find((i) => i.id === id);
+
+  // eleman bulunamazsa 404 sayfasına yönlendir
+  if (!item) notFound();
 
   return (
     <div className="container mx-auto my-20 text-3xl">
