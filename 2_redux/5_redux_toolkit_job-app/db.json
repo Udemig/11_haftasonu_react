@@ -82,40 +82,13 @@
       "date": 1720552344626
     },
     {
-      "id": "730a6fb7-f00a-4696-b344-f1bd39ef2b20",
-      "position": "Data Analyst",
-      "company": "Mimcode",
-      "location": "İstanbul",
-      "status": "Reddedildi",
-      "type": "Yarı Zamanlı",
-      "date": 1720552364242
-    },
-    {
-      "id": "ad6fad18-8a7a-4309-85f9-7fa937b841e0",
-      "position": "Marketing Manager",
-      "company": "Udemig",
-      "location": "İstanbul",
-      "status": "Mülakat",
-      "type": "Tam Zamanlı",
-      "date": 1720552656225
-    },
-    {
-      "position": "Marketing Manager",
-      "company": "Udemig",
-      "location": "İstanbul",
-      "status": "Mülakat",
-      "type": "Tam Zamanlı",
-      "id": "336e87e4-e8b0-4e29-87a5-2962f6249b32",
-      "date": 1720632154668
-    },
-    {
-      "id": "a630",
-      "position": "Tester",
+      "position": "Backend Developer",
       "company": "Youtube",
       "location": "Ankara, Türkiye",
       "status": "Devam Ediyor",
-      "type": "Yarı Zamanlı",
-      "date": 1726341661676
+      "type": "Tam Zamanlı",
+      "date": 1733259484351,
+      "id": "1kVMNpx"
     }
   ]
 }
