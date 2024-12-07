@@ -1,19 +1,5 @@
-import { CarType } from "../utils/types";
-
-type ReturnType = Promise<{
-  message: string;
-  data: CarType[];
-}>;
-
-const getCars = async (): ReturnType => {
-  const res = await fetch("http://localhost:3001/api/vehicles");
-
-  if (!res.ok) {
-    throw new Error("Araçları alırken bir hata oluştu");
-  }
-
-  return res.json();
-};
+import { getCars } from "../utils/service";
+import Card from "./Card";
 
 const List = async () => {
   const res = await getCars();
@@ -24,11 +10,9 @@ const List = async () => {
         Bütün Araçları Keşfedin
       </h1>
 
-      <div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
         {res.data.map((i) => (
-          <div key={i._id}>
-            <h1>{i.make}</h1>
-          </div>
+          <Card key={i._id} car={i} />
         ))}
       </div>
     </div>

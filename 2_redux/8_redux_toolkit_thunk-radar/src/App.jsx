@@ -20,9 +20,9 @@ const App = () => {
     dispatch(getFlights());
 
     // ilk isteğin ardından her 10 saniyede bir istek at
-    const timer = setInterval(() => {
-      dispatch(getFlights());
-    }, 10000);
+    // const timer = setInterval(() => {
+    //   dispatch(getFlights());
+    // }, 10000);
 
     // kullanıcı sayfadan ayrılınca sayıcı temizle
     return () => {
