@@ -12,11 +12,6 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-
-      // backgroundImage: {
-      //   "hero-bg":
-      //     "linear-gradient(rgba('#7ed56f',0.8), rgba('#28b485',0.8)), url('/src/app/assets/bg.jpg')",
-      // },
     },
   },
   plugins: [],

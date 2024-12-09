@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import Order from "../(models)/Order";
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const getActiveProducts = async () => {
@@ -13,14 +14,13 @@ export const POST = async (req) => {
   try {
     //1) isteğin body kısmında gelen satın alınacak araç verisine eriş
     const product = await req.json();
+    console.log("PRODUCT", product);
 
     //2) stripte catalog'una kaydedilmiş ürünleri al
     const stripeProducts = await getActiveProducts();
 
     //3) satın alıncak ürün catalog'da var mı kontrol et
-    let foundProduct = stripeProducts.find(
-      (i) => i.metadata.product_id === product._id
-    );
+    let foundProduct = stripeProducts.find((i) => i.metadata.product_id === product._id);
 
     //4) catolog'da yok ise satın alınacak ürünü catalog'a ekle
     if (!foundProduct) {
@@ -47,9 +47,19 @@ export const POST = async (req) => {
     const session = await stripe.checkout.sessions.create({
       line_items: [product_info],
       mode: "payment",
-      success_url: "http://localhost:3000" + "/success",
-      cancel_url: "http://localhost:3000" + "/cancel",
+      success_url: process.env.BASE_API_URL + "/success",
+      cancel_url: process.env.BASE_API_URL + "/cancel",
     });
+
+    const orderItem = {
+      product: product._id,
+      money_spend: product.price,
+      currency: "usd",
+      type: "one_time",
+    };
+
+    // satın alınan ürünü siparişler kolleksiyonuna ekle
+    await Order.create(orderItem);
 
     //7) satın alım url'ini client'a döndür
     return NextResponse.json({

@@ -3,13 +3,14 @@ import { models } from "../utils/contants";
 
 const Hero = () => {
   return (
-    <div className="h-[80vh] bg-center bg-cover grid place-items-center p-5 bg-black text-white">
+    <div
+      className="h-[80vh] bg-center bg-cover grid place-items-center p-5 bg-black text-white bg-[linear-gradient(#00000084,#00000084),url('/bg.jpg')]
+    "
+    >
       <div className="text-center flex flex-col gap-8">
         <p>Yakınındaki kiralık araçları keşfet</p>
 
-        <h1 className="text-4xl md:text-5xl font-bold">
-          Kendin İçin Mükemmek Aracı Bul
-        </h1>
+        <h1 className="text-4xl md:text-5xl font-bold">Kendin İçin Mükemmek Aracı Bul</h1>
 
         <p>Kendine uygun modeli belirle</p>
 

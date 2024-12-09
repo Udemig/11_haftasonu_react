@@ -1,4 +1,4 @@
-import { CarType } from "/src/app/utils/types";
+import { CarType, OrderType } from "@/app/utils/types";
 
 type DetailRes = Promise<{
   message: string;
@@ -6,7 +6,7 @@ type DetailRes = Promise<{
 }>;
 
 export const getDetail = async (id: string): DetailRes => {
-  const res = await fetch(`http://localhost:3001/api/vehicles/${id}`);
+  const res = await fetch(`${process.env.BASE_API_URL}/api/vehicles/${id}`);
 
   if (!res.ok) throw new Error("Detay verileri alınamadı");
 
@@ -19,10 +19,25 @@ type CarsRes = Promise<{
 }>;
 
 export const getCars = async (): CarsRes => {
-  const res = await fetch("http://localhost:3001/api/vehicles");
+  const res = await fetch(`${process.env.BASE_API_URL}/api/vehicles`);
 
   if (!res.ok) {
     throw new Error("Araçları alırken bir hata oluştu");
+  }
+
+  return res.json();
+};
+
+type OrderRes = Promise<{
+  text: string;
+  orders: OrderType[];
+}>;
+
+export const getOrders = async (): OrderRes => {
+  const res = await fetch(`${process.env.BASE_API_URL}/api/orders`);
+
+  if (!res.ok) {
+    throw new Error("Siparişleri alırken bir hata oluştu");
   }
 
   return res.json();
