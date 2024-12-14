@@ -5,6 +5,8 @@ import icon4 from "@/app/assets/images/icon-4.png";
 import InfoCard from "./InfoCard";
 import { StaticImageData } from "next/image";
 import SalesGraphic from "./SalesGraphic";
+import { getValues } from "@/app/utils/api";
+import { Values } from "@/app/types";
 
 export type InfoItem = {
   icon: StaticImageData;
@@ -12,28 +14,30 @@ export type InfoItem = {
   value: number | string;
 };
 
-const Page = () => {
+const Page = async () => {
+  const values: Values = await getValues();
+
   // ekrana basılacak olan kartların dizisi
   const cards: InfoItem[] = [
     {
       icon: icon1,
       label: "Toplam Kullanıcı",
-      value: 327,
+      value: values.totalUsers,
     },
     {
       icon: icon2,
       label: "Toplam Sipariş",
-      value: 504,
+      value: values.totalOrders,
     },
     {
       icon: icon3,
       label: "Toplam Satış",
-      value: (142707).toLocaleString() + "$",
+      value: values.totalIncome.toLocaleString("tr") + "$",
     },
     {
       icon: icon4,
       label: "Ürün Sayısı",
-      value: 1428,
+      value: values.totalProducts,
     },
   ];
 

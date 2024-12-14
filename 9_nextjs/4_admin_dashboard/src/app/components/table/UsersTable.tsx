@@ -2,6 +2,7 @@ import { getUsers } from "@/app/utils/api";
 import TableContainer from ".";
 import { FaEye } from "react-icons/fa";
 import DeleteButton from "./DeleteButton";
+import Link from "next/link";
 
 const UsersTable = async () => {
   const users = await getUsers();
@@ -29,9 +30,12 @@ const UsersTable = async () => {
             <td>{user.address.city}</td>
             <td>
               <div className="flex gap-3">
-                <button className="border shadow p-2 rounded-md hover:shadow-lg hover:bg-gray-200 transition">
+                <Link
+                  href={`?show=${user.id}`}
+                  className="border shadow p-2 rounded-md hover:shadow-lg hover:bg-gray-200 transition"
+                >
                   <FaEye />
-                </button>
+                </Link>
 
                 <DeleteButton userId={user.id} />
               </div>

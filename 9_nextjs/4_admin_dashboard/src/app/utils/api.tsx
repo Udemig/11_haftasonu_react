@@ -1,4 +1,4 @@
-import { Order, Product, User } from "../types";
+import { Order, Product, User, Values } from "../types";
 
 export const getOrders = async (): Promise<Order[]> => {
   const res = await fetch("http://localhost:3030/orders");
@@ -86,4 +86,33 @@ export const deleteUser = async (id: string): Promise<void> => {
   }
 
   return res.json();
+};
+
+export const getUserById = async (id: string): Promise<User> => {
+  const res = await fetch(`http://localhost:3030/users/${id}`);
+
+  if (!res.ok) {
+    throw new Error("Kullanıcı verisi alınamadı");
+  }
+
+  return res.json();
+};
+
+export const getValues = async (): Promise<Values> => {
+  const orderData = await getOrders();
+  const userData = await getUsers();
+  const productData = await getProducts();
+
+  return {
+    totalUsers: userData.length * 186,
+    totalOrders:
+      orderData.reduce(
+        (a, b) => a + b.items.reduce((c, d) => c + d.quantity, 0),
+        0
+      ) * 78,
+    totalIncome: Math.round(
+      orderData.reduce((a, b) => a + b.total_price, 0) * 94
+    ),
+    totalProducts: productData.length * 127,
+  };
 };

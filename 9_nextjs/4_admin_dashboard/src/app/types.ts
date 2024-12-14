@@ -63,3 +63,10 @@ export type User = {
     }
   ];
 };
+
+export type Values = {
+  totalUsers: number;
+  totalOrders: number;
+  totalIncome: number;
+  totalProducts: number;
+};
